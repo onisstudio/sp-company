@@ -10,35 +10,36 @@
     show have been animated with computer software, though they are portrayed to give the impression that the show still
     utilizes the original technique of cutout animation.</p>
 
-{% for character in characters %}
 <!-- reverse order of the images -->
+{% for character in characters %}
 {% if loop.index % 2 != 0 %}
 <div class="row">
     <div class="col-md-8">
-        <h3><a href="/characters/{{ character.url }}" class="btn btn-block btn-outline-primary">{{ character.name }}</a></h3>
+        <h3><a href="/characters/{{ character.url }}" class="btn btn-block btn-outline-primary">{{ character.name }}</a>
+        </h3>
         <p>{{ character.short_description }}</p>
     </div>
     <div class="col-md-4 d-flex align-items-center justify-content-center">
-        <img class="img-responsive" src="{{ character.image_source }}"
-            alt="Picture of {{ character.name }}">
+        <img class="img-responsive" src="{{ character.image_source }}" alt="Picture of {{ character.name }}">
     </div>
 </div>
 {% else %}
 <div class="row">
     <div class="col-md-4 d-flex align-items-center justify-content-center">
-        <img class="img-responsive" src="{{ character.image_source }}"
-            alt="Picture of {{ character.name }}">
+        <img class="img-responsive" src="{{ character.image_source }}" alt="Picture of {{ character.name }}">
     </div>
     <div class="col-md-8">
-        <h3><a href="/characters/{{ character.url }}" class="btn btn-block btn-outline-primary">{{ character.name }}</a></h3>
+        <h3><a href="/characters/{{ character.url }}" class="btn btn-block btn-outline-primary">{{ character.name }}</a>
+        </h3>
         <p>{{ character.short_description }}</p>
     </div>
 </div>
 {% endif %}
-<!-- no horizontal line for the last character -->
-{% if loop.index != 13 %}
+
+{% if loop.index != 7 %}
 <hr>
 {% endif %}
+
 {% endfor %}
 
 {% endblock %}
