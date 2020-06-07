@@ -15,22 +15,22 @@
 {% if loop.index % 2 != 0 %}
 <div class="row">
     <div class="col-md-8">
-        <h3>{{ character.name }}</h3>
+        <h3><a href="/characters/{{ character.url }}" class="btn btn-block btn-outline-primary">{{ character.name }}</a></h3>
         <p>{{ character.description }}</p>
     </div>
     <div class="col-md-4 d-flex align-items-center justify-content-center">
-        <img class="featurette-image img-responsive" src="{{ character.image_source }}"
+        <img class="img-responsive" src="{{ character.image_source }}"
             alt="Picture of {{ character.name }}">
     </div>
 </div>
 {% else %}
 <div class="row">
     <div class="col-md-4 d-flex align-items-center justify-content-center">
-        <img class="featurette-image img-responsive" src="{{ character.image_source }}"
+        <img class="img-responsive" src="{{ character.image_source }}"
             alt="Picture of {{ character.name }}">
     </div>
     <div class="col-md-8">
-        <h3>{{ character.name }}</h3>
+        <h3><a href="/characters/{{ character.url }}" class="btn btn-block btn-outline-primary">{{ character.name }}</a></h3>
         <p>{{ character.description }}</p>
     </div>
 </div>

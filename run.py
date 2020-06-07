@@ -15,6 +15,18 @@ def characters():
         data = json.load(json_data)
     return render_template("characters.html", page_title="Characters", characters=data)
 
+@app.route('/characters/<character_name>')
+def about_member(character_name):
+    character = {}
+    
+    with open("data/characters.json", "r") as json_data:
+        data = json.load(json_data)
+        for obj in data:
+            if obj["url"] == character_name:
+                character = obj
+    
+    return render_template("character.html", character=character)
+
 @app.route('/about')
 def about():
     return render_template("about.html", page_title="About")
