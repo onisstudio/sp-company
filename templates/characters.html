@@ -16,7 +16,7 @@
 <div class="row">
     <div class="col-md-8">
         <h3><a href="/characters/{{ character.url }}" class="btn btn-block btn-outline-primary">{{ character.name }}</a></h3>
-        <p>{{ character.description }}</p>
+        <p>{{ character.short_description }}</p>
     </div>
     <div class="col-md-4 d-flex align-items-center justify-content-center">
         <img class="img-responsive" src="{{ character.image_source }}"
@@ -31,7 +31,7 @@
     </div>
     <div class="col-md-8">
         <h3><a href="/characters/{{ character.url }}" class="btn btn-block btn-outline-primary">{{ character.name }}</a></h3>
-        <p>{{ character.description }}</p>
+        <p>{{ character.short_description }}</p>
     </div>
 </div>
 {% endif %}

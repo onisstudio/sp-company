@@ -3,9 +3,11 @@
 {% block content %}
 
 <div class="row">
-    <div class="col-md-5">
+    <div class="col-md-5 text-center">
         <img src="{{ character.image_source }}" alt="Profile image for {{character.name}}" />
-        <h2 class="col-md-7">{{ character.name }}</h2>
+    </div>
+    <div class="col-md-7 d-flex align-items-center justify-content-center">
+        <h2 class="text-center">{{ character.name }}</h2>
     </div>
 </div>
 
