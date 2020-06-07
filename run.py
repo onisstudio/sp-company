@@ -1,4 +1,4 @@
-import os
+import os, json
 from flask import Flask, render_template
 
 app = Flask(__name__)
@@ -10,11 +10,14 @@ def index():
 
 @app.route('/characters')
 def characters():
-    return render_template("characters.html")
+    data = []
+    with open("data/characters.json", "r") as json_data:
+        data = json.load(json_data)
+    return render_template("characters.html", page_title="Characters", characters=data)
 
 @app.route('/about')
 def about():
-    return render_template("about.html")
+    return render_template("about.html", page_title="About")
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
